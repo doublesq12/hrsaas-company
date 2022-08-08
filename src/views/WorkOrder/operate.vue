@@ -111,6 +111,7 @@ export default {
       })
       const workList = await this.ProcessingWorkOrderStatus(data.currentPageRecords)
       this.WorkOrderList = workList
+      console.log(workList)
       this.Pag = data
     },
     // 获取工单状态

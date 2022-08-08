@@ -50,6 +50,8 @@ service.interceptors.response.use(
       Message.error('用户信息过期，请重新登录')
       store.dispatch('user/logout')
       router.push('/login')
+    } else if (error?.config?.url.startsWith('/api/vm-service/policy')) {
+      Message.error(error?.response?.data)
     } else {
       Message.error(error.message)
     }
